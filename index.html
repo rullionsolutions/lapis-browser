@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" type="text/css" href="/cdn/twitter-bootstrap-v3.1.1/css/bootstrap.min.css" media="screen" />
+    </head>
+
+    <body onunload=""><!-- onunload a fix for a (Firefox?) reload-on-back-button issue -->
+
+        <div class="container-fluid" id="css_main">
+            <div class="row">
+
+                <div class="col-md-2" id="css_left_bar">
+                    <div class="css_main_logo hidden-phone">
+                        <a href="index.html?page_id=home">
+                            Home
+                        </a>
+                    </div>
+                    <div class="css_logged_in">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="input-block-level" id="css_page_unisrch" placeholder="search" />
+                            </div>
+                        </form>
+                    </div>
+                    <div id="css_page_links"> </div>
+                    <div id="css_page_messages"> </div>
+                </div>    <!-- #css_left_bar -->
+
+                <div class="col-md-10">
+                    <div id="css_nav_icons">
+                        <a class="css_hide" id="css_nav_prev"  >previous</a>
+                        <a class="css_hide" id="css_nav_next"  >next</a>
+                        <a class="css_hide" id="css_nav_search">search</a>
+                    </div>
+                    <div class="page-header">
+                        <h1>
+                            <span id="css_page_header_title"></span>
+                        </h1>
+                        <p id="css_page_header_descr" class="lead"></p>
+                    </div>
+
+                    <ul id="css_page_tabs" class="nav nav-tabs css_hide">
+                    </ul>
+
+                    <div id="css_body">
+                        <div id="css_content">
+                            Loading...
+                        </div>
+                        <div id="css_page_buttons" class="btn-group">
+                        </div>
+                    </div>    <!-- #css_body -->
+
+                </div>    <!-- .col-md-10 -->
+
+            </div>    <!-- .row-fluid -->
+        </div>    <!-- .container-fluid -->
+        <script type="text/javascript" src="/cdn/jquery-v1.11.3/jquery-1.11.3.min.js"> </script>
+        <script type="text/javascript" src="/cdn/twitter-bootstrap-v3.1.1/js/bootstrap.min.js"> </script>
+        <script type="text/javascript" src="bundle.js"> </script>
+        <script type="text/javascript">
+            window.controller.selectors = {
+                title: "#css_page_header_title",
+                descr: "#css_page_header_descr",
+                target: "#css_main",
+                content: "#css_content",
+                messages: "#css_page_messages",
+                links: "#css_page_links",
+                buttons: "#css_page_buttons",
+                tabs: "#css_page_tabs",
+            };
+
+            window.onhashchange = function () {
+                window.controller.hashChange(window.location.href);
+            };
+
+            window.controller.hashChange(window.location.href);
+        </script>
+    </body>
+</html>

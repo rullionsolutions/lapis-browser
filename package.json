@@ -1,0 +1,22 @@
+{
+  "name": "lapis-browser",
+  "version": "0.0.0",
+  "description": "Browser-Specific Components",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodeunit test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:rullionsolutions/lapis-browser"
+  },
+  "author": "stephen.d.francis@gmail.com",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "underscore": ">= 1.0.0",
+    "q": ">= 1.4.1",
+    "url": ">= 1.0.0",
+    "lapis-core": ">= 0.0.0",
+    "lapis-ui"  : ">= 0.0.0"
+  }
+}
